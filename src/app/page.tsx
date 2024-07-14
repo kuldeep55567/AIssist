@@ -1,11 +1,22 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-
+import Hero from "../demo/hero";
+import VideoIntro from "../demo/video-intro";
+import Feature from "../demo/feature";
+import MobileConvenience from "../demo/mobile-convenience";
+// import { Footer } from "@/components";
+import Testimonials from "../demo/testimonials";
+import Faqs from "../demo/faqs";
 export default function Home() {
   return (
 <div>
-  <h1>Hii</h1>
-  <Button variant="default">Subscribe</Button>
+<>
+      <Hero />
+      <VideoIntro />
+      <Feature />
+      <MobileConvenience />
+      <Testimonials />
+      <Faqs />
+      {/* <Footer/> */}
+    </>
 </div>
   );
 }

@@ -12,10 +12,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { v4 as uuidv4 } from 'uuid';
 import moment from 'moment';
 import { Input } from "@/components/ui/input";
-import { chatSession } from '../../../../utils/GeminiAI';
+import { chatSession } from '../../../utils/GeminiAI';
 import { LoaderCircle } from 'lucide-react';
-import { MockInterview } from '../../../../utils/schema';
-import { db } from '../../../../utils/db';
+import { MockInterview } from '../../../utils/schema';
+import { db } from '../../../utils/db';
 import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
 
@@ -85,26 +85,29 @@ const AddNewInterview: React.FC = () => {
                             <form onSubmit={onSubmit}>
                                 <div>
                                     <h2>Add Details about your job position/role, Job description and years of experience</h2>
-                                    <div className='mt-7 my-2'>
+                                    <div className='mt-10 my-2'>
                                         <label>Job role/Job Position</label>
                                         <Input
                                             placeholder='Ex. Full Stack Developer'
+                                            className='mt-2'
                                             required
                                             onChange={(event) => setJobPosition(event.target.value)}
                                         />
                                     </div>
-                                    <div className="my-3">
+                                    <div className="my-3 mt-5">
                                         <label>Job Description/ Tech Stack (In Short)</label>
                                         <Textarea
                                             placeholder='Ex. React, Python, NodeJs'
+                                            className='mt-2'
                                             required
                                             onChange={(event) => setJobDesc(event.target.value)}
                                         />
                                     </div>
-                                    <div className='my-3'>
+                                    <div className='my-3 mt-5'>
                                         <label>Years of experience</label>
                                         <Input
                                             placeholder='Ex. 5'
+                                            className='mt-2'
                                             type='number'
                                             required
                                             onChange={(event) => setJobExperience(event.target.value)}
